@@ -35,7 +35,7 @@ const printPokemonCard = () => {
             </div>
         `;
         pokemonCardContainer.appendChild(pokemonCard);
-        setTimeout(hiddenImageLoading(), 5000);
+        hiddenImageLoading();
         pokemonCardContainer.style.visibility = "visible";
     })
     .catch((error) => {
