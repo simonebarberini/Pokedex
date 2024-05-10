@@ -8,14 +8,17 @@
 </head>
 <body>
     <div class="container">
+
         <div class="search-bar-container">
             <input class="search-bar" id="searchBar" type="text" placeholder="Search a pokemon...">
             <div class="search-button" id="searchButton">Search</div>
         </div>
-        <div class="card"  style="visibility: hidden;" id="pokemonCard">
-           
+        <div>
+            <div class="loading" id="loading" style="display: none;">
+                <img src="/poke_loading.gif" alt="Caricamento...">
+            </div>
+            <div class="card" style="visibility: hidden;" id="pokemonCard"></div>
         </div>
-
     </div>
     <script src="script.js"></script>
 </body>

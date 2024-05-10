@@ -1,13 +1,22 @@
 const pokemonCardContainer = document.getElementById("pokemonCard");
 const searchButton = document.getElementById("searchButton");
 const searchBar = document.getElementById("searchBar");
+const loading = document.getElementById("loading");
 
 const getPokemonName = () => {
     return searchBar.value;
 }
 
+const showImageLoading = () => {
+    loading.style.display = "block";
+}
+const hiddenImageLoading = () => {
+    loading.style.display = "none";
+}
+
 const printPokemonCard = () => {
     pokemonCardContainer.style.visibility = "hidden";
+    showImageLoading();
     let pokemonName = getPokemonName();
     pokemonCardContainer.innerHTML = "";
     fetch(`https://pokeapi.co/api/v2/pokemon/${pokemonName}`)
@@ -26,9 +35,13 @@ const printPokemonCard = () => {
             </div>
         `;
         pokemonCardContainer.appendChild(pokemonCard);
+        setTimeout(hiddenImageLoading(), 5000);
         pokemonCardContainer.style.visibility = "visible";
     })
-    .catch((error) => console.error("Errore: ", error));
+    .catch((error) => {
+        console.error("Errore: ", error);
+        alert("Pokemon non trovato!");
+    })
 }
 
 searchButton.addEventListener("click", printPokemonCard);
