@@ -6,7 +6,6 @@
 
 .container{
     display: flex;
-    border: 3px solid red;
     flex-direction: column;
     align-items: center;
     background-image: url("background.jpg");
@@ -65,7 +64,13 @@ input[type = text]:focus{
     height: 30px;
 }
 
+img{
+    width: 250px;
+}
+
 .image{
+    display: flex;
+    justify-content: center;
     border: 5px solid rgb(206, 182, 0);;
     height: 250px;
     margin-top: 20px;
