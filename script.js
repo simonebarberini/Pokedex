@@ -25,7 +25,8 @@ const typeColors = {
 };
     
 const getPokemonName = () => {
-    return searchBar.value;
+    let name = searchBar.value;
+    return name.toLowerCase();
 }
 
 const showImageLoading = () => {
